@@ -1,2 +1,0 @@
-# Tugas Besar 1
-
