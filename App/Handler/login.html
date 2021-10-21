@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="loginStyle.css">
+</head>
+
+<body>
+  <header id="header">
+    <h1 id="title">
+      Dorayakuy!
+    </h1>
+  </header>
+  <p id="description">
+    Karena Dorayaki gak cuma yang itu-itu aja
+  </p>
+  
+  <form id="survey-form" method="post" action="Authenticate.php">
+    <div class="label-input">
+      <label id="username-label" for id="username">Username</label>
+      <input
+               type="text"
+               name="username"
+               id="username"
+               placeholder="Tulis username Anda"
+               class="text-input"
+               required>
+    </div>
+    <div class="label-input">
+      <label id="password-label" for id="password">Password</label>
+      <input 
+             type="password"
+             name="password"
+             id="password"
+             placeholder="Tulis password Anda"
+             class="text-input"
+             required>
+   <div class="label-input">
+     <button id="login">Login</button>
+   </div>
+  </form>
+</body>
+</html>
