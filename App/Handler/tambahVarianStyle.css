@@ -1,0 +1,72 @@
+body {
+    font-family: arial; 
+    background: linear-gradient(37deg, rgba(10, 9, 240, 0.5), rgba(220, 12, 220, 0.3)), linear-gradient(127deg, cyan, rgba(2, 220, 2, 0.3));
+    color: rgba(245, 245, 245, 1);
+    text-align: center;
+    padding: 20px; 
+   }
+   
+   header {
+     line-height: 5px;
+   }
+   
+   #description {
+     font-style: italic;
+   }
+   
+   form {
+     display: box;
+     background: blue;
+     margin: 40px 20%;
+     padding: 20px 5%; 
+     text-align: left;
+     border-radius: 0.5rem;
+     font-size: 18px;
+     border-style: solid;
+   }
+   
+   label {
+     align-items: left;
+   }
+   
+   input{
+     margin: 12px 0;
+     padding: 12px 12px;
+     border-radius: 0.5rem;  
+     font-size: inherit;
+     font-family: inherit;
+   }
+   
+   .text-input {
+     width: 100%;
+   }
+      
+   #tambah-varian {
+     padding: 5px;
+     border-radius: 0.5rem;
+     border-style: solid;
+     background: #90FF90;
+     color: #6F006F;
+     font-size: inherit;
+     font-family: inherit;
+     width: 104.5%;
+     height: 50px;
+     transition-duration: 0.2s;
+   }
+
+   textarea {
+    resize: vertical;
+    width: 102%;
+    min-height: 200px;
+    margin-top: 10px;
+    border-radius: 0.5rem;
+    border-style: double;
+    border-color: black;
+    border-width: 5px;
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+   #tambah-varian:hover {
+     background: #00FF00;
+   }
