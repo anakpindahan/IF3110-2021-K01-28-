@@ -1,0 +1,60 @@
+body {
+    font-family: arial; 
+    background: linear-gradient(37deg, rgba(10, 9, 240, 0.5), rgba(220, 12, 220, 0.3)), linear-gradient(127deg, cyan, rgba(2, 220, 2, 0.3));
+    color: rgba(245, 245, 245, 1);
+    text-align: center;
+    padding: 20px;
+
+}
+
+h1 {
+    margin: 0.5rem;
+    font-size: 3.5vmax;
+    text-align: center;
+}
+
+.variant-description {
+    background-color: #90FF90;
+    border: 1px solid aqua;
+    border-radius: 2%;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.variant-image {
+    background-color: #6F006F;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    display: flex;
+    align-content: flex-end;
+    flex-direction: column;
+    border: 1px solid aqua;
+    border-radius: 2%;
+    width: 10%;
+    flex-basis: 18%;
+}
+
+.product-texts {
+    font-size: large;
+    text-transform: capitalize;
+    background-color: none;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    display: flex;
+    align-content: flex-end;
+    flex-direction: column;
+    border: 1px solid aqua;
+    border-radius: 2%;
+    width: 10%;
+    flex-grow: 4;
+}
+
+.product-image:hover{
+    background-color: #90FF90;
+    box-shadow: 4px 4px 10px #6F006F;
+    transform: scale(1.05);
+}
