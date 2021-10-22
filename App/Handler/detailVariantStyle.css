@@ -1,7 +1,7 @@
 body {
     font-family: arial; 
     background: linear-gradient(37deg, rgba(10, 9, 240, 0.5), rgba(220, 12, 220, 0.3)), linear-gradient(127deg, cyan, rgba(2, 220, 2, 0.3));
-    color: rgba(245, 245, 245, 1);
+    color: black;
     text-align: center;
     padding: 20px;
 
@@ -13,10 +13,10 @@ h1 {
     text-align: center;
 }
 
-.variant-description {
-    background-color: #90FF90;
+#variant-description {
+    background-color: rgba(245, 245, 245, 1);
     border: 1px solid aqua;
-    border-radius: 2%;
+    border-radius: 0.5%;
     margin: 0.5rem;
     padding: 0.5rem;
     display: flex;
@@ -38,7 +38,7 @@ h1 {
     flex-basis: 18%;
 }
 
-.product-texts {
+.variant-texts {
     font-size: large;
     text-transform: capitalize;
     background-color: none;
@@ -53,8 +53,7 @@ h1 {
     flex-grow: 4;
 }
 
-.product-image:hover{
-    background-color: #90FF90;
+.variant-image:hover{
     box-shadow: 4px 4px 10px #6F006F;
     transform: scale(1.05);
 }
