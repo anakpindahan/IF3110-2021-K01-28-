@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-     if(!isset($_COOKIE["username"])){
+    /*if(!isset($_COOKIE["username"])){
         header("Location: login.html");
     }
-    $user = $_COOKIE["username"];
+    $user = $_COOKIE["username"];*/
     try {
             $db = new PDO('sqlite:../../Database/dorayakuy.db');
     } catch(PDOException $e){
@@ -50,7 +50,7 @@
 
         <div class="variant-texts">
             <p>Nama:  <?php echo $nama_varian?></p>
-            <p>Deskripsi:  <?php echo $deskripsi_varian?></p>
+            <p><?php echo $deskripsi_varian?></p>
             <p>Harga:  <?php echo $harga_varian?></p>
             <p>Stok:  <?php echo $stok_varian?></p>
             <p>Pembelian:  <?php echo $pembelian_varian?></p>

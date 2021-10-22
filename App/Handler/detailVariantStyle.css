@@ -34,23 +34,21 @@ h1 {
     flex-direction: column;
     border: 1px solid aqua;
     border-radius: 2%;
-    width: 10%;
-    flex-basis: 18%;
+    width: 25%;
 }
 
 .variant-texts {
     font-size: large;
-    text-transform: capitalize;
     background-color: none;
     margin: 0.5rem;
     padding: 0.5rem;
     display: flex;
     align-content: flex-end;
+    align-items: flex-start;
     flex-direction: column;
     border: 1px solid aqua;
     border-radius: 2%;
-    width: 10%;
-    flex-grow: 4;
+    width: 70%;
 }
 
 .variant-image:hover{
