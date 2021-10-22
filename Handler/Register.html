@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel = "stylesheet" href= "registerStyle.css">
+<body>
+    <header id="header">
+        <h1 id="title">
+            Dorayakuy!
+        </h1>
+    </header>
+    <p id="description">
+        Karena Dorayaki gak cuma yang itu-itu aja
+    </p>
+      
+    <form method="POST" id="survey-form" onsubmit="return validation()" action="insert_user.php">
+        <div class="label-input">
+            <label id="email-label" for id="email">Email</label>
+            <input
+                   type="email"
+                   name="email"
+                   id="email"
+                   placeholder="Masukkan email yang Anda gunakan"
+                   class="text-input"
+                   oninput = "emailCheck(this.value)"
+                   required>
+        </div>
+        <div class="label-input">
+            <label id="username-label" for id="username">Username</label>
+            <input
+                   type="text"
+                   pattern ="^[a-zA-Z0-9_]+$"
+                   title="Hanya bisa memasukkan alfabet, angka, atau underscore"
+                   name="username"
+                   id="username"
+                   placeholder="Tulis username Anda"
+                   class="text-input"
+                   required
+                   oninput="usernameCheck(this.value)"
+                   >
+        </div>
+        <div class="label-input">
+            <label id="password-label" for id="password">Password</label>
+            <input 
+                 type="password"
+                 name="password"
+                 id="password"
+                 placeholder="Tulis password Anda"
+                 class="text-input"
+                 required>
+        </div>
+        <div class="label-input">
+            <label id="konfirmasi-password-label" for id="k-password">Konfirmasi password</label>
+            <input 
+                type="password"
+                name="k-password"
+                id="k-password"
+                placeholder="Konfirmasi password Anda"
+                class="text-input"
+                required>
+        </div>
+        <div id="pesan"></div>
+       <div class="label-input">
+            <input type="submit" id="register" value="Register">
+       </div>
+    </form>
+</body>
+<script src="Register.js"></script>
+</html>
