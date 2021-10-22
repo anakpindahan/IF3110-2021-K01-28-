@@ -6,7 +6,7 @@
     }
     $user = $_COOKIE["username"];
     try {
-            $db = new PDO('sqlite:../../Database/dorayakuy.db');
+            $db = new PDO('sqlite:../Database/dorayakuy.db');
     } catch(PDOException $e){
         die("Error!" . $e->getMessage());   
     }
