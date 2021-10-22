@@ -75,10 +75,10 @@
                         $idx_dora = $data[$k]["id_dorayaki"];
                         echo '
                         <div class = "best_dora">
-                            <a href = "detailVarian.php?id='.$idx_dora.'">
+                            <a href = "detailVariant.php?id='.$idx_dora.'">
                                 <img src='.$gambar.'alt= "gambar dorayaki">
                             </a>
-                            <a href = "detailVarian.php?id='.$idx_dora.'">
+                            <a href = "detailVariant.php?id='.$idx_dora.'">
                                 <p>'.$nama.'</p>
                             </a>
                         </div>

@@ -53,7 +53,7 @@
                         result.innerHTML += `
                         <tr>
                             <td class="gambar">
-                                <img scr=`+data_row_column[0]+` alt ="GambarDorayaki">
+                                <img src=`+data_row_column[0]+` alt ="GambarDorayaki">
                             </td>
                             <td class="data">
                                 <h3>`+data_row_column[1]+`</h3>
