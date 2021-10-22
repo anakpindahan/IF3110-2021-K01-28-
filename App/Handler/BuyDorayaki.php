@@ -1,15 +1,18 @@
 <?php
-    /*if(!isset($_COOKIE['username'])){
+    if(!isset($_COOKIE['username'])){
         header('Location: Authenticate.php');
     }
-    $user = $_COOKIE["username"];*/
+    $user = $_COOKIE["username"];
     try {
             $db = new PDO('sqlite:../../Databases/dorayakuy.db');
     } catch(PDOException $e){
         die("Error!" . $e->getMessage());   
     }
+    $temp = "SELECT * FROM USER WHERE username = $user";
+    $userdata = $db->query($temp);
+    $role = $userdata["is_admin"];
     // Anggap ambil id varian dorayaki dari GET
-    $id_dora = 1; //$_GET['id'];
+    $id_dora = $_GET['id'];
     $sql_stmt = "SELECT * FROM DORAYAKI WHERE id = $id_dora";
     $info_dorayaki = $db->query($sql_stmt);
     $rows = $info_dorayaki->fetchAll();
@@ -33,7 +36,7 @@
 <body>
     <div class = "BuyImage">
         <img class = "dorayaki_img" src="../<?php echo $imgpath?>"> </img>
-    </div>
+    </div> 
     <div class = "DorayakiDetails">
         <h3><?php echo $name?></h3>
         <h4>Price : <?php echo $price?></h4>
@@ -57,7 +60,9 @@
         <div class = "TotalPrice">
             <h5>Total Price:</h5>
             <label id = "TotalPriceLabel">Rp </label>
-            <label id = "TotalPriceLabelNum"><?php echo number_format($price, 2, ',', '.');?></label>
+            <label id = "TotalPriceLabelNum">
+                <?php echo number_format($price, 2, ',', '.')?>
+            </label>
         </div>
         <button class = "BuyButton" onclick = "buyy()"></button>
         <script>
