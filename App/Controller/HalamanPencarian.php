@@ -3,12 +3,12 @@
     if (isset($_GET["keyword"])){
         $key = $_GET["keyword"];
         try {
-            $db = new PDO('sqlite:Databases/database.db');
+            $db = new PDO('sqlite:Databases/dorayakuy.db');
         } catch(PDOException $e){
             die("Error!" . $e->getMessage());   
         }
 
-        $sql= "SELECT * from dorayaki where name like '%$key%'";
+        $sql= "SELECT * from DORAYAKI where name like '%$key%'";
         $res = $db->query($sql);
         $data = $res->fetchAll();
         $n_data = count($data);
@@ -30,7 +30,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hasil Pencarian</title>
-    <link rel="stylesheet" href="HalamanPencarian.css">
 
     <script>
         function request_page(pn){
@@ -38,8 +37,8 @@
             var controls = document.getElementById("controls");
             result.innerHTML = `
             <tr id='headerTabel'>
-                <th id='gambar'> Gambar </th>
-                <th id='info'> Informasi </th>
+                <th id='gambar'> <h2>Gambar</h2> </th>
+                <th id='info'> <h2>Informasi</h2> </th>
             </tr>`
 
             var req = new XMLHttpRequest();
@@ -53,10 +52,10 @@
                         var data_row_column = data_row[i].split("|");
                         result.innerHTML += `
                         <tr>
-                            <td>
-                                <img scr=`+data_row_column[0]+`alt ="GambarDorayaki">
+                            <td class="gambar">
+                                <img scr=`+data_row_column[0]+` alt ="GambarDorayaki">
                             </td>
-                            <td>
+                            <td class="data">
                                 <h3>`+data_row_column[1]+`</h3>
                                 <p> deskripsi : `+ data_row_column[2]+`</p>
                                 <br>
@@ -75,7 +74,7 @@
                     if(pn > 1){
                         controls.innerHTML += '<button onclick= "request_page('+(pn-1)+')"> Prev </button> \n';
                     }
-                    controls.innerHTML += ' <h3 id= "nhalaman">Halaman '+pn+' dari '+ last+ '</h3> \n';
+                    controls.innerHTML += ' <h5 id= "nhalaman">Halaman '+pn+' dari '+ last+ '</h5> \n';
                     if (pn < last){
                         controls.innerHTML += ' <button onclick= "request_page('+(pn+1)+')"> Next </button> \n';
                     }
@@ -84,16 +83,18 @@
             }
         }
     </script>
+    <link rel="stylesheet" href="HalamanPencarian.css">
 
 
 </head>
 <body>
-    <form method="GET" action="">
+    <h1>Halaman Pencarian</h1>
+    <form class = "box-input" method="GET" action="">
         <input type="text" id="search" name = "keyword" placeholder="Cari dorayaki berdasarkan nama">
         <input type="submit" value="search">
     </form>
     
-    <div id="keterangan">Hasil Pencarian Dorayakuy</div>
+    <div id="keterangan"><h2>Hasil Pencarian Dorayakuy</h2></div>
     <table id="hasil">
     
 
