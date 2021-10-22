@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel = "stylesheet" href= "tambahVarianStyle.css">
+<body>
+    <header id="header">
+        <h1 id="title">
+            Dorayakuy!
+        </h1>
+    </header>
+    <p id="description">
+        Karena Dorayaki gak cuma yang itu-itu aja
+    </p>
+    <form method="POST" id="tambah-varian-form"  action="tambahVarian.php" enctype="multipart/form-data">
+        <div class="label-input">
+            <label id="nama-varian-label" for id="nama-varian">Nama Varian</label>
+            <input
+                   type="text"
+                   name="nama-varian"
+                   id="nama-varian"
+                   placeholder="Masukkan nama varian yang akan ditambah"
+                   class="text-input"
+                   required>
+        </div>
+        <div class="label-input">
+            <label id="harga-varian-label" for id="harga-varian">Harga</label>
+            <input 
+                 type="number"
+                 name="harga-varian"
+                 id="harga-varian"
+                 placeholder="Tulis harga varian tersebut"
+                 class="text-input"
+                 required>
+        </div>
+        <div class="label-input">
+            <label id="stok-awal-varian-label" for id="stok-awal-varian">Stok awal</label>
+            <input 
+                 type="number"
+                 name="stok-awal-varian"
+                 id="stok-awal-varian"
+                 placeholder="Tulis stok awal varian tersebut"
+                 class="text-input"
+                 required>
+        </div>
+        <div class="label-input">
+            <label id="deskripsi-varian-label" for id="deskripsi-varian">Deskripsi</label>
+            <textarea 
+                id="deskripsi-varian" 
+                name="deskripsi-varian" 
+                placeholder="Deskripsikan varian dorayaki tersebut"
+                class="text-input"
+                required>
+            </textarea>
+        </div>
+        <div class="label-input">
+            <label id="gambar-varian-label" for id="gambar-varian">Gambar varian</label>
+            <input 
+                type="file"
+                name="gambar-varian"
+                id="gambar-varian"
+                class="text-input"
+                accept="image/*"
+                required>
+        </div>
+       <div class="label-input">
+            <input type="submit" id="tambah-varian" value="Tambah varian">
+       </div>
+    </form>
+</body>
+</html>
