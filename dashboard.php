@@ -27,6 +27,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="DashboardStyle.css">
     <title>Document</title>
 </head>
 <body>
@@ -36,14 +37,13 @@
         </div>
         <div class="search-bar">
             <form method="GET" action="HalamanPencarian.php">
-                <input type="text" name = "keyword" placeholder="cari dorayaki berdasarkan nama">
+                <input class="kotak-pencarian" type="text" name = "keyword" placeholder="cari dorayaki berdasarkan nama">
                 <input type ="submit" value = "search">
             </form>
         </div>
         <div class = "user-type">
             <div class="tombol">
                 <?php
-                    echo $_COOKIE["is_admin"];
                     if($_COOKIE["is_admin"] == 1){
                         echo '<a href="TambahVarian.php">Tambah varian</a>';
                     }
@@ -53,6 +53,9 @@
                 ?>
 
             </div>
+            <div>
+                |
+            </div>
 
             <div class="tombol">
                 <a href="login.html"> logout </a>
@@ -60,6 +63,7 @@
         </div>    
     </div>
     <div class = "content">
+        <h1> Our Best Dorayaki </h1>
         <?php
             for($i=0; $i < 2; $i++){
                 echo '<div class="row">';

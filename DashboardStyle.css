@@ -1,0 +1,51 @@
+body {
+    font-family: arial; 
+    background: linear-gradient(37deg, rgba(10, 9, 240, 0.5), rgba(220, 12, 220, 0.3)), linear-gradient(127deg, cyan, rgba(2, 220, 2, 0.3));
+    color: black;
+    text-align: center;
+}
+
+.brand {
+    color : #000;
+	font-weight: bolder;
+	font-size: 1.3em;
+}
+
+.navbar{
+    background-color: #FFF;
+    position: relative;
+    left: 0;
+    top: 0;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar div{
+    display:flex
+}
+
+.user-type div{
+    margin-left: 10px;
+}
+
+.content{
+    margin: 50px;
+}
+.row {
+    display:flex;
+    justify-content: space-around;
+}
+p{
+    text-align: center;
+}
+
+.search-bar input{
+    margin-right: 10px;
+    height: 30px;
+    border-radius: 10px;
+}
+.kotak-pencarian{
+    width:400px;
+}
