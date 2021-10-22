@@ -1,18 +1,12 @@
 <?php
-    $server = 'localhost';
-    $username = 'root';
-    $password = '';
-    $database = 'dorayakuy';
-
-    $conn = mysqli_connect($server, $username, $password, $database);
-
-    if(!$conn) {
-        die("Connection failed!");
+    /*if(!isset($_COOKIE["username"])){
+        header("Location: login.html");
     }
-
-    $dorayaki = new App\Controller\Dorayaki();
-    if(!isset($_COOKIE['username'])){
-        header('Location: Authenticate.php');
+    $user = $_COOKIE["username"];*/
+    try {
+            $db = new PDO('sqlite:../../Database/dorayakuy.db');
+    } catch(PDOException $e){
+        die("Error!" . $e->getMessage());   
     }
 
     $nama_varian = $_POST['nama-varian'];
@@ -22,24 +16,27 @@
     $file_gambar = $_FILES['gambar-varian'];
 
     // Pindahkan gambar ke folder database
-    $upload_dir = 'App/Database/images';
+    $upload_dir = '../../Database/images/';
     if($file_gambar['error'] == UPLOAD_ERR_OK){
         $tmp_name = $file_gambar['tmp_name'];
-        $name = basename($file_gambar['name']);
-        move_uploaded_file($tmp_name, '$upload_dir/$name');
+        $file = $file_gambar['name'];
+        $path = pathinfo($file);
+        $file_name = $path['filename'];
+        $extension = $path['extension'];
+        $target_path = $upload_dir . $file_name . '.' . $extension;
+        move_uploaded_file($tmp_name, $target_path);
         
-        $sql_stmt = 
-        "INSERT INTO DORAYAKI(name, desc, price, stock, image_path)
-        VALUES($nama_varian, $deskripsi_varian, $harga_varian, $stok_awal_varian, '$upload_dir/$name')";
-        if(mysqli_query($conn, $sql_stmt)){
-            echo 'Varian berhasil ditambahkan';
+        $sql_stmt = $db->prepare("INSERT INTO DORAYAKI(name, desc, price, stock, image_path)
+        VALUES(?, ?, ?, ?, ?)");
+        if($sql_stmt->execute(array($nama_varian, $deskripsi_varian, $harga_varian, $stok_awal_varian, $target_path))){
+            echo "<script type='text/javascript'>alert('Varian berhasil ditambahkan');</script>";
             header('Location: TambahVarian.html');
         } else {
-            echo 'Varian gagal ditambahkan';
+            echo "<script type='text/javascript'>alert('Varian gagal ditambahkan');</script>";
             header('Location: TambahVarian.html');
         }
     } else {
-        echo "Tidak ada gambar yang diunggah";
+        echo "<script type='text/javascript'>alert('Tidak ada gambar yang diunggah');</script>";
         header('Location: TambahVarian.html');
     }
 
