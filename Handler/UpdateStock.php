@@ -1,7 +1,7 @@
 <?php
     //$user = $_COOKIE["username"];
     try {
-        $db = new PDO('sqlite:../../Databases/dorayakuy.db');
+        $db = new PDO('sqlite:../Databases/dorayakuy.db');
     } catch(PDOException $e){
         die("Error!" . $e->getMessage());   
     }

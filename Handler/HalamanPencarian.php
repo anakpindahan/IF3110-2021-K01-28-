@@ -3,7 +3,7 @@
     if (isset($_GET["keyword"])){
         $key = $_GET["keyword"];
         try {
-            $db = new PDO('sqlite:Databases/dorayakuy.db');
+            $db = new PDO('sqlite:../Databases/dorayakuy.db');
         } catch(PDOException $e){
             die("Error!" . $e->getMessage());   
         }

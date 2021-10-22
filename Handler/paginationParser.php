@@ -5,7 +5,7 @@
         $rpp = $_GET["rpp"];
         $last = $_GET["last"];
         try {
-            $db = new PDO('sqlite:Databases/dorayakuy.db');
+            $db = new PDO('sqlite:../Databases/dorayakuy.db');
         } catch(PDOException $e){
             die("Error!" . $e->getMessage());   
         }

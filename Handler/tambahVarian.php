@@ -4,7 +4,7 @@
     }
     $user = $_COOKIE["username"];
     try {
-            $db = new PDO('sqlite:../Database/dorayakuy.db');
+            $db = new PDO('sqlite:../Databases/dorayakuy.db');
     } catch(PDOException $e){
         die("Error!" . $e->getMessage());   
     }
@@ -16,7 +16,7 @@
     $file_gambar = $_FILES['gambar-varian'];
 
     // Pindahkan gambar ke folder database
-    $upload_dir = '../../Database/images/';
+    $upload_dir = '../Databases/images/';
     if($file_gambar['error'] == UPLOAD_ERR_OK){
         $tmp_name = $file_gambar['tmp_name'];
         $file = $file_gambar['name'];
