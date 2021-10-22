@@ -1,10 +1,10 @@
 <?php
-    /*if(!isset($_COOKIE["username"])){
+    if(!isset($_COOKIE["username"])){
         header("Location: login.html");
     }
-    $user = $_COOKIE["username"];*/
+    $user = $_COOKIE["username"];
     try {
-            $db = new PDO('sqlite:../../Database/dorayakuy.db');
+            $db = new PDO('sqlite:../Database/dorayakuy.db');
     } catch(PDOException $e){
         die("Error!" . $e->getMessage());   
     }
