@@ -8,9 +8,9 @@
     } catch(PDOException $e){
         die("Error!" . $e->getMessage());   
     }
-    $temp = "SELECT * FROM USER WHERE username = $user";
-    $userdata = $db->query($temp);
-    $role = $userdata["is_admin"];
+    // $temp = "SELECT * FROM USER WHERE username = $user";
+    // $userdata = $db->query($temp);
+    // $role = $userdata["is    _admin"];
     // Anggap ambil id varian dorayaki dari GET
     $id_dora = $_GET['id'];
     $sql_stmt = "SELECT * FROM DORAYAKI WHERE id = $id_dora";

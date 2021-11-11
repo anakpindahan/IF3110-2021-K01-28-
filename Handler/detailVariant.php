@@ -12,7 +12,7 @@
     }
 
     // Anggap ambil id varian dorayaki dari GET
-    $id_dorayaki = $_GET['id'];
+    $id_dorayaki = intval($_GET['id']);
     $sql_stmt = "SELECT * FROM DORAYAKI WHERE id = $id_dorayaki";
     $info_dorayaki = $db->query($sql_stmt);
     $rows = $info_dorayaki->fetchAll();
@@ -61,7 +61,7 @@
                 echo '<button id="delete-button" type="button" onclick="alert(\'yakin ingin menghapus varian?\')">Hapus</button>';
                 // TODO: Make button delete varian berfungsi
             } else {
-                echo '<button id="buy-button" type="button" onclick="window.location.href=\'BuyDorayaki.php\'">Beli</button>';
+                echo "<button onclick = 'window.location.href =  \"BuyDorayaki.php?id=".$id_dorayaki . "\"' class = 'buy-button'> Beli </button>";
             }
         ?>
     </div>
