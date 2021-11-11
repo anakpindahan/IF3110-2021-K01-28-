@@ -31,37 +31,39 @@
     <script>
         var id = <?php echo $id_dora;?>;
     </script>
-    <script src="../App/Handler/BuyDorayaki.js"></script>
+    <script src="BuyDorayaki.js"></script>
 </head>
 <body>
     <div class = "BuyImage">
-        <img class = "dorayaki_img" src="../<?php echo $imgpath?>"> </img>
+        <img class = "dorayaki_img" src="<?php echo $imgpath?>"> </img>
     </div> 
     <div class = "DorayakiDetails">
         <h3><?php echo $name?></h3>
-        <h4>Price : <?php echo $price?></h4>
+        <Label> <h4>Harga: </h4></Label>
+        <h4 id="hargaSatuan"><?php echo $price?></h4>
         <h4>Description</h4>
         <p><?php echo $desc?></p>
+        <p>Stock: </p>
+        <p id="BatasStok"> <?php echo $stock?></p>
     </div>
     <div id = "BuyForm">
         <h5>Amount to Buy : </h5>
         <div class = "BuyPage">
             <div class = "Amount">
-                <button class = "AmountButtons" id="-Button" onclick = "decrement(e, <?php echo $price?>)"></button>
+                <button class = "AmountButtons" id="-Button" onclick = "minus()">-</button>
             </div>
             <div class ="AmountNum">
-                <input type="number" name = "amount" id ="amount-buy-num" value = 1>
+                <input type="number" name = "amount" id ="amount-buy-num" value = 1 oninput = updateTotalHarga()>
             </div>
-            <div class= "Amount" style = "float: right;">
-                <button class = "AmountButtons" id="+button" onclick = "increment(e, <?php echo $price ?>, <?php echo $stock ?>);">+</button>
+            <div class= "Amount">
+                <button class = "AmountButtons" id="+button" onclick = "plus()">+</button>
             </div>
         </div>
     </div>
         <div class = "TotalPrice">
             <h5>Total Price:</h5>
-            <label id = "TotalPriceLabel">Rp </label>
             <label id = "TotalPriceLabelNum">
-                <?php echo number_format($price, 2, ',', '.')?>
+                <?php echo $price?>
             </label>
         </div>
         <button class = "BuyButton" onclick = "buyy()"></button>
@@ -79,6 +81,18 @@
                 xhttp.send("id=" + <?php echo $id_dora?> +"&stokDibeli="+ document.getElementById("amount-buy-num").value.toString());
             }
 
+            function realTimeUpdateStock(){
+                var xhttp = new XMLHttpRequest();
+                xhttp.open("GET", "RealTimeStock.php?id="+<?php echo $id_dora?>, true);
+                xhttp.send();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("BatasStok").innerHTML = xhttp.responseText;
+                    }
+                };
+                setTimeout(realTimeUpdateStock, 2000);
+            }
+            realTimeUpdateStock();
         </script>
 </body>
 </html>

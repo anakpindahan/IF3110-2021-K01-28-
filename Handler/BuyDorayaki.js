@@ -1,17 +1,43 @@
-function increment(e, price, amount) {
-    e.preventDefault();
-    if(document.getElementById("amount-buy-num").value < amount){
-      document.getElementById("amount-buy-num").stepUp();
-      price = price * document.getElementById("amount-buy-num").value
-      document.getElementById("total-price-num").innerHTML = price.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+function updateTotalHarga(){
+  var BatasStok = document.getElementById("BatasStok").innerHTML;
+  var intBatas = parseInt(BatasStok);
+  var nilai = document.getElementById("amount-buy-num").value;
+  var intNilai = parseInt(nilai);
+  var harga = document.getElementById("hargaSatuan").innerHTML;
+  var intHarga = parseInt(harga);
+  if(intNilai >= 0){
+    if(intNilai > intBatas){
+      document.getElementById("amount-buy-num").value = intBatas;
+      document.getElementById("TotalPriceLabelNum").innerHTML = intBatas * intHarga;
+    }
+    else{
+      document.getElementById("TotalPriceLabelNum").innerHTML = intNilai * intHarga;
     }
   }
-  
-  function decrement(e, price) {
-    e.preventDefault();
-    if(document.getElementById("amount-buy-num").value > 1){
-        document.getElementById("amount-buy-num").stepDown();
-        price = price * document.getElementById("amount-buy-num").value
-        document.getElementById("total-price-num").innerHTML = price.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");;
-    } 
+}
+
+function plus(){
+  var BatasStok = document.getElementById("BatasStok").innerHTML;
+  var intBatas = parseInt(BatasStok);
+  var nilai = document.getElementById("amount-buy-num").value;
+  var intNilai = parseInt(nilai);
+  var harga = document.getElementById("hargaSatuan").innerHTML;
+  var intHarga = parseInt(harga);
+  if(intNilai < intBatas){
+    var totalHarga = (intNilai+1) * intHarga;
+    document.getElementById("amount-buy-num").value = intNilai+1;
+    document.getElementById("TotalPriceLabelNum").innerHTML = totalHarga;
   }
+}
+
+function minus(){
+  var nilai = document.getElementById("amount-buy-num").value;
+  var intNilai = parseInt(nilai);
+  var harga = document.getElementById("hargaSatuan").innerHTML;
+  var intHarga = parseInt(harga);
+  if(intNilai > 0){
+    var totalHarga = (intNilai-1) * intHarga;
+    document.getElementById("amount-buy-num").value = intNilai-1;
+    document.getElementById("TotalPriceLabelNum").innerHTML = totalHarga;
+  }
+}
