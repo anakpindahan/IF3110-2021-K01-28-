@@ -58,10 +58,34 @@
 
         <?php
             if($_COOKIE["is_admin"] == 1){
-                echo '<button id="delete-button" type="button" onclick="alert(\'yakin ingin menghapus varian?\')">Hapus</button>';
-                // TODO: Make button delete varian berfungsi
+                echo '
+                <form method="post">
+                    <input type="submit" name="delete-button" value="Hapus"/>
+                </form>
+                ';
             } else {
                 echo '<button id="buy-button" type="button" onclick="window.location.href=\'BuyDorayaki.php\'">Beli</button>';
+            }
+
+            if(isset($_POST['delete-button'])){
+                confirm();
+            }
+            function confirm(){
+                $id_dorayaki = $_GET['id'];
+                echo str_replace(
+                "idnya", $id_dorayaki,
+                '<script type="text/javascript">
+                    var id = idnya
+                    confirmDelete();
+                    function confirmDelete(){
+                        var r = confirm("Apakah Anda yakin ingin menghapus varian dorayaki ini?");
+                        if(r == true){
+                            var txt = "delete_variant.php?id=" + id;
+                            window.location.href = txt;
+                        }
+                    }
+                </script>
+                ');
             }
         ?>
     </div>
