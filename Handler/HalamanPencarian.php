@@ -95,19 +95,47 @@
 
 </head>
 <body>
-    <h1>Halaman Pencarian</h1>
-    <form class = "box-input" method="GET" action="">
-        <input type="text" id="search" name = "keyword" placeholder="Cari dorayaki berdasarkan nama">
-        <input type="submit" value="search">
-    </form>
-    
-    <div id="keterangan"><h2>Hasil Pencarian Dorayakuy</h2></div>
-    <table id="hasil">
-    
+<div class = "navbar">
+        <div class="logo">
+                <a class="brand" href="dashboard.php">Dorayakuy!</a>
+        </div>
+        <div class = "user-type">
+            <div class="tombol">
+                <?php
+                    if($_COOKIE["is_admin"] == 1){
+                        echo '<a href="TambahVarian.html">Tambah varian</a>';
+                    }
+                    else{
+                        echo'<a href="RiwayatPembelian.php"> Riwayat pembelian</a>';
+                    }
+                ?>
 
-    </table>
-    <div id="controls"></div>
-    <div id='cek'></div>
+            </div>
+            <div>
+                |
+            </div>
+
+            <div class="tombol">
+                <a href="login.html"> logout </a>
+            </div> 
+        </div>    
+    </div>
+    <div class = content>
+        <h1>Halaman Pencarian</h1>
+        <form class = "box-input" method="GET" action="">
+            <input type="text" id="search" name = "keyword" placeholder="Cari dorayaki berdasarkan nama">
+            <input type="submit" value="search">
+        </form>
+        
+        <div id="keterangan"><h2>Hasil Pencarian Dorayakuy</h2></div>
+        <table id="hasil">
+        
+
+        </table>
+        <div id="controls"></div>
+        <div id='cek'></div>
+    </div>
+    
     
 </body>
 <script> request_page(1)</script>

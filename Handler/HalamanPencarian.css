@@ -52,3 +52,30 @@ h3{
 a{
     color: black;
 }
+
+
+/*Navbar Style*/
+.brand {
+    color : #000;
+	font-weight: bolder;
+	font-size: 1.3em;
+}
+
+.navbar{
+    position: relative;
+    background-color: #FFF;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+
+.navbar div{
+    display:flex
+}
+
+.user-type div{
+    margin-left: 10px;
+}
