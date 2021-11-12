@@ -34,3 +34,21 @@ button{
     margin-right: 10px;
 }
 
+.gambar{
+    width: 200px;
+    height: auto;
+    display: block;
+}
+
+p{
+    text-align: left;
+    text-transform: capitalize;
+}
+
+h3{
+    text-transform: capitalize;
+}
+
+a{
+    color: black;
+}

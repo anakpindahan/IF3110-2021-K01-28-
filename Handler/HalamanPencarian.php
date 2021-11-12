@@ -30,6 +30,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hasil Pencarian</title>
+    <link rel="stylesheet" href="HalamanPencarian.css">
 
     <script>
         function request_page(pn){
@@ -53,10 +54,16 @@
                         result.innerHTML += `
                         <tr>
                             <td class="gambar">
-                                <img src=`+data_row_column[0]+` alt ="GambarDorayaki">
+                            <a href = "detailVariant.php?id=`+data_row_column[5]+`">
+                                <img class= "gambar" src=`+data_row_column[0]+` alt ="GambarDorayaki">
+                            </a>
+                                
                             </td>
                             <td class="data">
-                                <h3>`+data_row_column[1]+`</h3>
+                                <a href = "detailVariant.php?id=`+data_row_column[5]+`">
+                                    <h3>`+data_row_column[1]+`</h3>
+                                </a>
+                                
                                 <p> deskripsi : `+ data_row_column[2]+`</p>
                                 <br>
                                 <p> harga : `+data_row_column[3]+`</p>
@@ -83,7 +90,7 @@
             }
         }
     </script>
-    <link rel="stylesheet" href="HalamanPencarian.css">
+    
 
 
 </head>

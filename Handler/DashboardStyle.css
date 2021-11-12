@@ -29,6 +29,10 @@ body {
 .user-type div{
     margin-left: 10px;
 }
+img{
+    width: 200px;
+    height: auto;
+}
 
 .content{
     margin: 50px;
@@ -48,4 +52,9 @@ p{
 }
 .kotak-pencarian{
     width:400px;
+}
+
+a{
+    text-transform: capitalize;
+    color:black;
 }

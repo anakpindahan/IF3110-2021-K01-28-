@@ -18,13 +18,13 @@
         }
 
         $limit = ' LIMIT '.($pn - 1)*$rpp.', '.$rpp;
-        $sql= "SELECT name, desc, price, stock, image_path from DORAYAKI where name like '%$key%' $limit";
+        $sql= "SELECT id, name, desc, price, stock, image_path from DORAYAKI where name like '%$key%' $limit";
         $res = $db->query($sql);
         $data = $res->fetchAll();
 
         $page_data = "";
         for($i=0; $i < count($data); $i++){
-            $page_data.= $data[$i]["image_path"].'|'.$data[$i]["name"].'|'.$data[$i]["desc"].'|'.$data[$i]["price"].'|'.$data[$i]["stock"].'||';
+            $page_data.= $data[$i]["image_path"].'|'.$data[$i]["name"].'|'.$data[$i]["desc"].'|'.$data[$i]["price"].'|'.$data[$i]["stock"].'|'.$data[$i]["id"].'||';
         }
 
         echo $page_data;
