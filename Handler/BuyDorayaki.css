@@ -1,0 +1,130 @@
+body {
+    font-family: arial; 
+    background: linear-gradient(37deg, rgba(10, 9, 240, 0.5), rgba(220, 12, 220, 0.3)), linear-gradient(127deg, cyan, rgba(2, 220, 2, 0.3));
+    color: black;
+    text-align: center;
+}
+
+h1 {
+    margin: 0.5rem;
+    font-size: 3.5vmax;
+    text-align: center;
+}
+
+.variant-description {
+    background-color: rgba(245, 245, 245, 1);
+    border: 1px solid aqua;
+    border-radius: 0.5%;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 30px;
+}
+
+.dorayaki_image {
+    background-color: #6F006F;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    display: flex;
+    align-content: flex-end;
+    flex-direction: column;
+    border: 1px solid aqua;
+    border-radius: 2%;
+    width: 250px;
+    flex-basis: 18%;
+}
+
+.DorayakiDetails {
+    font-size: large;
+    text-transform: capitalize;
+    background-color: none;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    display: flex;
+    align-content: flex-end;
+    flex-direction: column;
+    border: 1px solid aqua;
+    border-radius: 2%;
+    width: 10%;
+    flex-grow: 4;
+}
+
+.dorayaki_image:hover{
+    box-shadow: 4px 4px 10px #6F006F;
+    transform: scale(1.05);
+}
+
+.Sebaris{
+    display: flex;
+    margin-left: 20px;
+}
+
+.label{
+    margin-right: 30px;
+    font-weight: bold;
+}
+
+.BuyPage{
+    display: flex;
+    justify-content: center;
+}
+#amount-buy-num{
+    width: 50px;
+    margin: 0 10px;
+}
+.TotalPrice{
+    display: flex;
+    justify-content: center;
+}
+#TotalPriceLabelNum{
+    margin-left: 5px;
+}
+
+.BuyButton{
+    margin: 5px;
+    background-color: #90FF90;
+}
+
+/* Navbar Style */
+.brand {
+    color : #000;
+	font-weight: bolder;
+	font-size: 1.3em;
+}
+
+.navbar{
+    position: relative;
+    background-color: #FFF;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+
+.navbar div{
+    display:flex
+}
+
+.user-type div{
+    margin-left: 10px;
+}
+
+.search-bar input{
+    margin-right: 10px;
+    height: 30px;
+    border-radius: 10px;
+}
+.kotak-pencarian{
+    width:400px;
+}
+
+a{
+    text-transform: capitalize;
+    color:black;
+}
+
