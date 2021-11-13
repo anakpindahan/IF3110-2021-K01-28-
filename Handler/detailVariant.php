@@ -24,7 +24,9 @@
     $stok_varian = $row['stock'];
     $gambar_varian_path = $row['image_path'];
 
-    $sql_stmt = "SELECT sum(counts) FROM HISTORY WHERE id_dorayaki = $id_dorayaki";
+    $sql_stmt = "WITH A AS (SELECT id_dorayaki, counts 
+    FROM history JOIN user ON history.username = user.username WHERE is_admin = 0)
+    SELECT sum(counts) FROM HISTORY WHERE id_dorayaki = $id_dorayaki";
     $info_dorayaki = $db->query($sql_stmt);
     $rows = $info_dorayaki->fetchAll();
     $row = $rows[0];
@@ -51,7 +53,7 @@
             <div class="tombol">
                 <?php
                     if($_COOKIE["is_admin"] == 1){
-                        echo '<a href="TambahVarianForm.php">Tambah varian</a>';
+                        echo '<a href="TambahVarianForm.">Tambah varian</a>';
                         echo '<div>|</div>';
                         echo'<a href="RiwayatPembelian.php"> Riwayat pembelian</a>';
                     }
