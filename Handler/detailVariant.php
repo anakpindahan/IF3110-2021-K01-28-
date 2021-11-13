@@ -63,6 +63,8 @@
                     <input type="submit" name="delete-button" value="Hapus"/>
                 </form>
                 ';
+                echo "<button onclick = 'window.location.href =  \"BuyDorayaki.php?id=".$id_dorayaki . "\"' class = 'buy-button'> Edit Stok </button>";
+                ;
             } else {
                 echo "<button onclick = 'window.location.href =  \"BuyDorayaki.php?id=".$id_dorayaki . "\"' class = 'buy-button'> Beli </button>";
             }
