@@ -14,7 +14,7 @@ function updateTotalHarga(){
       document.getElementById("TotalPriceLabelNum").innerHTML = intNilai * intHarga;
     }
   }
-  else{
+  else if(intNilai<0){
     document.getElementById("amount-buy-num").value = 0;
   }
 }
