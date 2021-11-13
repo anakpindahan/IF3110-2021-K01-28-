@@ -10,11 +10,10 @@
         die("Error!" . $e->getMessage());   
     }
     $limit = 8;
-    $sql= "SELECT id_dorayaki, dorayaki_name, image_path 
-    FROM HISTORY JOIN DORAYAKI 
-    ON HISTORY.id_dorayaki == DORAYAKI.id 
-    GROUP BY id_dorayaki 
-    ORDER BY sum(counts) DESC 
+    $sql= "WITH A as (select id_dorayaki, counts from history join user on history.username = user.username where is_admin = 0) 
+    SELECT id_dorayaki, name, image_path from dorayaki join A on A.id_dorayaki = dorayaki.id 
+    group by id_dorayaki 
+    order by sum(counts) desc;
     LIMIT $limit";
     $res = $db->query($sql);
     $data = $res->fetchAll();
@@ -71,7 +70,7 @@
                     $k  = 4*$i + $j;
                     if($k < count($data)){
                         $gambar = $data[$k]["image_path"];
-                        $nama = $data[$k]["dorayaki_name"];
+                        $nama = $data[$k]["name"];
                         $idx_dora = $data[$k]["id_dorayaki"];
                         echo '
                         <div class = "best_dora">
