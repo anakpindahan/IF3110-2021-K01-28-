@@ -26,7 +26,7 @@
 
     $sql_stmt = "WITH A AS (SELECT id_dorayaki, counts 
     FROM history JOIN user ON history.username = user.username WHERE is_admin = 0)
-    SELECT sum(counts) FROM HISTORY WHERE id_dorayaki = $id_dorayaki";
+    SELECT sum(counts) FROM A WHERE id_dorayaki = $id_dorayaki";
     $info_dorayaki = $db->query($sql_stmt);
     $rows = $info_dorayaki->fetchAll();
     $row = $rows[0];
