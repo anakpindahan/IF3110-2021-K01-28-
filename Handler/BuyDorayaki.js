@@ -30,6 +30,12 @@ function plus(){
   }
 }
 
+function plusAdmin(){
+  var nilai = document.getElementById("amount-buy-num").value;
+  var intNilai = parseInt(nilai);
+  document.getElementById("amount-buy-num").value = intNilai+1;
+}
+
 function minus(){
   var nilai = document.getElementById("amount-buy-num").value;
   var intNilai = parseInt(nilai);
