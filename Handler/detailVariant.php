@@ -24,7 +24,7 @@
     $stok_varian = $row['stock'];
     $gambar_varian_path = $row['image_path'];
 
-    $sql_stmt = "SELECT count(counts) FROM HISTORY WHERE id_dorayaki = $id_dorayaki";
+    $sql_stmt = "SELECT sum(counts) FROM HISTORY WHERE id_dorayaki = $id_dorayaki";
     $info_dorayaki = $db->query($sql_stmt);
     $rows = $info_dorayaki->fetchAll();
     $row = $rows[0];
@@ -37,9 +37,44 @@
 </head>
 
 <body> 
+    <div class = "navbar">
+        <div class="logo">
+                <a class="brand" href="dashboard.php">Dorayakuy!</a>
+        </div>
+        <div class="search-bar">
+            <form method="GET" action="HalamanPencarian.php">
+                <input class="kotak-pencarian" type="text" name = "keyword" placeholder="cari dorayaki berdasarkan nama">
+                <input type ="submit" value = "search">
+            </form>
+        </div>
+        <div class = "user-type">
+            <div class="tombol">
+                <?php
+                    if($_COOKIE["is_admin"] == 1){
+                        echo '<a href="TambahVarianForm.php">Tambah varian</a>';
+                        echo '<div>|</div>';
+                        echo'<a href="RiwayatPembelian.php"> Riwayat pembelian</a>';
+                    }
+                    else{
+                        echo'<a href="RiwayatPembelian.php"> Riwayat pembelian</a>';
+                    }
+                ?>
+
+            </div>
+            <div>
+                |
+            </div>
+
+            <div class="tombol">
+                <a href="login.html"> logout </a>
+            </div> 
+        </div>    
+    </div>
+
     <header> 
         <h1>Varian Dorayaki</h1>
     </header>
+
 
     <div class="variant-description" id="variant-description">
         <img 
@@ -53,20 +88,24 @@
             <p>Deskripsi:  <?php echo $deskripsi_varian?></p>
             <p>Harga:  <?php echo $harga_varian?></p>
             <p>Stok:  <?php echo $stok_varian?></p>
-            <p>Pembelian:  <?php echo $pembelian_varian?></p>
+            <p>Dorayaki terjual:  <?php echo $pembelian_varian?></p>
         </div>
 
         <?php
             if($_COOKIE["is_admin"] == 1){
-                echo '
-                <form method="post">
-                    <input type="submit" name="delete-button" value="Hapus"/>
-                </form>
-                ';
-                echo "<button onclick = 'window.location.href =  \"BuyDorayaki.php?id=".$id_dorayaki . "\"' class = 'buy-button'> Edit Stok </button>";
-                ;
+                echo "
+                <div class='button-group'>
+                    <form method='post'>
+                        <input type='submit' class='buy-button' name='delete-button' id='delete-button' value='Hapus'/>
+                    </form>
+                    <button type='submit' onclick = 'window.location.href =  \"BuyDorayaki.php?id=".$id_dorayaki . "\"' class = 'buy-button' id='edit-button'> Edit Stok </button>
+                </div>
+                ";
             } else {
-                echo "<button onclick = 'window.location.href =  \"BuyDorayaki.php?id=".$id_dorayaki . "\"' class = 'buy-button'> Beli </button>";
+                echo "
+                <div class='button-group'>
+                    <button onclick = 'window.location.href =  \"BuyDorayaki.php?id=".$id_dorayaki . "\"' class = 'buy-button' id='buy-button'> Beli </button>
+                </div>";
             }
 
             if(isset($_POST['delete-button'])){

@@ -26,7 +26,7 @@ h1 {
 }
 
 .variant-image {
-    background-color: #6F006F;
+    background: linear-gradient(37deg, rgba(10, 9, 240, 0.5), rgba(220, 12, 220, 0.3)), linear-gradient(127deg, cyan, rgba(2, 220, 2, 0.3));
     margin: 0.5rem;
     padding: 0.5rem;
     display: flex;
@@ -40,12 +40,11 @@ h1 {
 
 .variant-texts {
     font-size: large;
-    text-transform: capitalize;
     background-color: none;
     margin: 0.5rem;
     padding: 0.5rem;
     display: flex;
-    align-content: flex-end;
+    align-items: flex-start;
     flex-direction: column;
     border: 1px solid aqua;
     border-radius: 2%;
@@ -56,4 +55,87 @@ h1 {
 .variant-image:hover{
     box-shadow: 4px 4px 10px #6F006F;
     transform: scale(1.05);
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.buy-button{
+    cursor: pointer;
+    border: 1px solid aqua;
+    border-radius: 2%;
+    width: 100%;
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+
+#delete-button {
+    background-color: crimson;
+    color: whitesmoke;
+}
+
+#buy-button {
+    background-color: #90FF90;
+}
+
+#edit-button {
+    background-color: #90FF90;
+}
+
+.brand {
+    color : #000;
+	font-weight: bolder;
+	font-size: 1.3em;
+}
+
+.navbar{
+    position: relative;
+    background-color: #FFF;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+
+.navbar div{
+    display:flex
+}
+
+.user-type div{
+    margin-left: 10px;
+}
+img{
+    width: 200px;
+    height: auto;
+}
+
+.content{
+    margin: 50px;
+}
+.row {
+    display:flex;
+    justify-content: space-around;
+}
+p{
+    text-align: center;
+}
+
+.search-bar input{
+    margin-right: 10px;
+    height: 30px;
+    border-radius: 10px;
+}
+.kotak-pencarian{
+    width:400px;
+}
+
+a{
+    text-transform: capitalize;
+    color:black;
 }

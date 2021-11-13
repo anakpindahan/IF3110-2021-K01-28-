@@ -56,4 +56,9 @@
    
    #login:hover {
      background: #00FF00;
+     cursor: pointer;
+   }
+
+   .to-register{
+    color: rgba(245, 245, 245, 1);
    }

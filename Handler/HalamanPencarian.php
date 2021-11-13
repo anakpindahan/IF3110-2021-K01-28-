@@ -103,7 +103,9 @@
             <div class="tombol">
                 <?php
                     if($_COOKIE["is_admin"] == 1){
-                        echo '<a href="TambahVarian.html">Tambah varian</a>';
+                        echo '<a href="TambahVarianForm.php">Tambah varian</a>';
+                        echo '<div>|</div>';
+                        echo'<a href="RiwayatPembelian.php"> Riwayat pembelian</a>';
                     }
                     else{
                         echo'<a href="RiwayatPembelian.php"> Riwayat pembelian</a>';
@@ -123,8 +125,8 @@
     <div class = content>
         <h1>Halaman Pencarian</h1>
         <form class = "box-input" method="GET" action="">
-            <input type="text" id="search" name = "keyword" placeholder="Cari dorayaki berdasarkan nama">
-            <input type="submit" value="search">
+            <input class="navbar-input" type="text" id="search" name = "keyword" placeholder="Cari dorayaki berdasarkan nama">
+            <input class="navbar-input" type="submit" value="search">
         </form>
         
         <div id="keterangan"><h2>Hasil Pencarian Dorayakuy</h2></div>

@@ -44,7 +44,9 @@
             <div class="tombol">
                 <?php
                     if($_COOKIE["is_admin"] == 1){
-                        echo '<a href="TambahVarian.html">Tambah varian</a>';
+                        echo '<a href="TambahVarianForm.php">Tambah varian</a>';
+                        echo '<div>|</div>';
+                        echo'<a href="RiwayatPembelian.php"> Riwayat pembelian</a>';
                     }
                     else{
                         echo'<a href="RiwayatPembelian.php"> Riwayat pembelian</a>';

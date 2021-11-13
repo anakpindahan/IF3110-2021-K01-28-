@@ -30,14 +30,14 @@
         VALUES(?, ?, ?, ?, ?)");
         if($sql_stmt->execute(array($nama_varian, $deskripsi_varian, $harga_varian, $stok_awal_varian, $target_path))){
             echo "<script type='text/javascript'>alert('Varian berhasil ditambahkan');</script>";
-            header('Location: TambahVarian.html');
+            header('Location: TambahVarianForm.php');
         } else {
             echo "<script type='text/javascript'>alert('Varian gagal ditambahkan');</script>";
-            header('Location: TambahVarian.html');
+            header('Location: TambahVarianForm.php');
         }
     } else {
         echo "<script type='text/javascript'>alert('Tidak ada gambar yang diunggah');</script>";
-        header('Location: TambahVarian.html');
+        header('Location: TambahVarianForm.php');
     }
 
 

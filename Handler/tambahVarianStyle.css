@@ -8,13 +8,14 @@ body {
    
    header {
      line-height: 5px;
+     margin: 40px;
    }
    
    #description {
      font-style: italic;
    }
    
-   form {
+   .add-form {
      display: box;
      background: blue;
      margin: 40px 20%;
@@ -29,7 +30,7 @@ body {
      align-items: left;
    }
    
-   input{
+   .add-input{
      margin: 12px 0;
      padding: 12px 12px;
      border-radius: 0.5rem;  
@@ -70,3 +71,58 @@ body {
    #tambah-varian:hover {
      background: #00FF00;
    }
+
+   .brand {
+    color : #000;
+	font-weight: bolder;
+	font-size: 1.3em;
+}
+
+.navbar{
+    position: relative;
+    background-color: #FFF;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+
+.navbar div{
+    display:flex
+}
+
+.user-type div{
+    margin-left: 10px;
+}
+
+img{
+    width: 200px;
+    height: auto;
+}
+
+.content{
+    margin: 50px;
+}
+.row {
+    display:flex;
+    justify-content: space-around;
+}
+p{
+    text-align: center;
+}
+
+.search-bar .navbar-input{
+    margin-right: 10px;
+    height: 30px;
+    border-radius: 10px;
+}
+.kotak-pencarian{
+    width:400px;
+}
+
+a{
+    text-transform: capitalize;
+    color:black;
+}
