@@ -47,33 +47,53 @@
         <p id="BatasStok"> <?php echo $stock?></p>
     </div>
     <div id = "BuyForm">
-        <h5>Amount to Buy : </h5>
+        <?php
+            if ($_COOKIE['is_admin'] == 0){
+                echo "<h5>Amount to Buy : </h5>";
+            }
+            else{
+                echo "<h5>Masukkan Banyaknya Dorayaki Ini Yang Tersedia : </h5>";
+            }
+        ?>
         <div class = "BuyPage">
             <div class = "Amount">
                 <button class = "AmountButtons" id="-Button" onclick = "minus()">-</button>
             </div>
             <div class ="AmountNum">
-                <input type="number" name = "amount" id ="amount-buy-num" value = 1 oninput = updateTotalHarga()>
+                <input type="number" name = "amount" id ="amount-buy-num" value = 1 oninput = <?php if($_COOKIE['is_admin'] == 0){echo "updateTotalHarga()";} else{echo "plusAdmin()";}?>>
             </div>
             <div class= "Amount">
-                <button class = "AmountButtons" id="+button" onclick = "plus()">+</button>
+                <button class = "AmountButtons" id="+button" onclick = "<?php if($_COOKIE['is_admin'] == 0){echo "plus()";} else{echo "plusAdmin()";}?>">+</button>
             </div>
         </div>
     </div>
         <div class = "TotalPrice">
-            <h5>Total Price:</h5>
-            <label id = "TotalPriceLabelNum">
-                <?php echo $price?>
-            </label>
+            <?php
+                if ($_COOKIE['is_admin'] == 0){
+                    echo '<h5 id="totalPriceText">Total Price:</h5>
+                    <label for="totalPriceText" id = "TotalPriceLabelNum">
+                        <?php echo $price?>
+                    </label>';
+                }
+            ?>
         </div>
-        <button class = "BuyButton" onclick = "buyy()"></button>
+        <button id="BuyButton" class = "BuyButton" onclick = "buyy()">
+            <?php 
+                if ($_COOKIE['is_admin'] == 0){
+                    echo "Buy";
+                }
+                else{
+                    echo "Edit Stock";
+                }
+            ?>
+        </button>
+        <label id="pesanPembelian" for="BuyButton"></label>
         <script>
             function buyy(){
-                console.log(3);
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
-                        console.log(this.responseText);
+                        document.getElementById("pesanPembelian").innerHTML = this.responseText;
                     }
                 };
                 xhttp.open("POST", "UpdateStock.php", true);
@@ -96,4 +116,4 @@
         </script>
 </body>
 </html>
-//
+
