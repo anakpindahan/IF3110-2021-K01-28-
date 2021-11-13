@@ -36,7 +36,7 @@
     else{
         $stmt = $db->prepare("UPDATE DORAYAKI SET name=?,desc=?,price=?,stock=?,image_path=? WHERE id=?");
         $stmt->execute(array($name,$desc,$price,$val,$imgpath, $id_dora));
-        $query = "INSERT into HISTORY (username, id_dorayaki, dorayaki_name, time, counts) values ('$user', '$id_dora', '$name', '$date', '$val-$stock')";
+        $query = "INSERT into HISTORY (username, id_dorayaki, dorayaki_name, time, counts) values ('$user', '$id_dora', '$name', '$date', '$val')";
         $statement = $db->prepare($query);
         if($statement->execute()){
             echo "Success";
