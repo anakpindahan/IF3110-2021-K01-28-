@@ -60,7 +60,7 @@
                 <button class = "AmountButtons" id="-Button" onclick = "minus()">-</button>
             </div>
             <div class ="AmountNum">
-                <input type="number" name = "amount" id ="amount-buy-num" value = 1 oninput = <?php if($_COOKIE['is_admin'] == 0){echo "updateTotalHarga()";} else{echo "plusAdmin()";}?>>
+                <input type="number" name = "amount" id ="amount-buy-num" value = 1 oninput = <?php if($_COOKIE['is_admin'] == 0){echo "updateTotalHarga()";}?>>
             </div>
             <div class= "Amount">
                 <button class = "AmountButtons" id="+button" onclick = "<?php if($_COOKIE['is_admin'] == 0){echo "plus()";} else{echo "plusAdmin()";}?>">+</button>
@@ -71,9 +71,9 @@
             <?php
                 if ($_COOKIE['is_admin'] == 0){
                     echo '<h5 id="totalPriceText">Total Price:</h5>
-                    <label for="totalPriceText" id = "TotalPriceLabelNum">
-                        <?php echo $price?>
-                    </label>';
+                    <label for="totalPriceText" id = "TotalPriceLabelNum">'
+                    .$price.
+                    '</label>';
                 }
             ?>
         </div>
